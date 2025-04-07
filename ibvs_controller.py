@@ -104,8 +104,13 @@ class IBVS_Controller():
         '''
         Calculate the Moore-Penrose pseudoinverse of the error interaction matrix estimate, `self.L_e_est_pinv`, based on our current control and interaction modes.
         '''
-        assert self.curr_pts is not None, "You must set the current points with set_current_points()."
-        assert self.desired_pts is not None, "You must set the desired points with set_desired_points()."
+        if self.interaction_mode == 'curr':
+            assert self.curr_pts is not None, "You must set the current points with set_current_points()."
+        elif self.interaction_mode == 'desired':
+            assert self.desired_pts is not None, "You must set the desired points with set_desired_points()."
+        elif self.interaction_mode == 'mean':
+            assert self.curr_pts is not None, "You must set the current points with set_current_points()."
+            assert self.desired_pts is not None, "You must set the desired points with set_desired_points()."
 
         # two degrees of freedom: x velocity and z velocity
         if self.control_mode == '2xz':

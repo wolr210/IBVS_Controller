@@ -5,6 +5,8 @@ An implementation of an image-based visual servoing controller, as described in 
 <h3>Camera Frame</h3>
 The camera frame is assumed to be: origin at the center of the image, +x goes to the right, +y goes downwards, and +z goes into the image. All velocities are given relative to this frame (e.g. a positive x velocity means to move right).
 
+![ENEE408I Final Report Image Frame](https://github.com/user-attachments/assets/b0ded35e-6c07-4474-9544-c9e73043281f)
+
 <h3>Point Format</h3>
 Each point is a tuple of three floats.<br>The first value in the tuple will be the normalized x coordinate of the point, and should have a value in the range (-1.0, 1.0).<br>The second value in the tuple will be the normalized y coordinate of the point, and should have a value in the range (-1.0, 1.0).<br>The third value in the tuple will be the depth of the point in meters, and should have a value greater than 0.0.
 

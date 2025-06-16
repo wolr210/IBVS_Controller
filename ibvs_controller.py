@@ -39,7 +39,7 @@ class IBVS_Controller():
         <li>For each loop of the iteration:</li>
         <ol type="a">
             <li>Set the current positions of each of your points in the image:<br><code>controller.set_current_points(curr_pts=[(-0.2, -0.2, 5.0), (0.2, 0.2, 5.0)])</code></li>
-            <li>Check if the error is within some threshold, e.g.:<br><code>if np.linalg.norm(controller.errs) < 0.1:<br>break</code></li>
+            <li>Check if the error is within some threshold, e.g.:<br><code>if np.linalg.norm(controller.errs) < 0.1: break</code></li>
             <li>Calculate the interaction matrix of the control for this iteration:<br><code>controller.calculate_interaction_matrix()</code></li>
             <li>Calculate the output velocities and save them to a variable:<br><code>vels = controller.calculate_velocities()</code></li>
             <li>Apply the output velocities to your motor controllers (note: your robot may have a different frame than your camera!)
